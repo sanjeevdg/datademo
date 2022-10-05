@@ -33,17 +33,17 @@ axios.get('https://jsonplaceholder.typicode.com/users')
 
     <div className="accordion-item" key={person.id}>
         <h2 className="accordion-header" id="headingOne">
-            <button type="button" className="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target={'#'+person.username}>
+            <button type="button" className="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target={'#'+person.website.substring(0,person.website.indexOf('.'))}>
             <span className="badge bg-dark">{person.id}</span>&nbsp;&nbsp; {person.name}
             </button>									
         </h2>
-        <div id={person.username} className="accordion-collapse collapse" data-bs-parent="#myAccordion">
+        <div id={person.website.substring(0,person.website.indexOf('.'))} className="accordion-collapse collapse" data-bs-parent="#myAccordion">
             <div className="card-body">
                 <div className="card-text">
 
                     <div className="float-none">
 
-        <table class="table">
+        <table className="table">
         <tbody>
             <tr>
                 <th scope="row">Name</th>
